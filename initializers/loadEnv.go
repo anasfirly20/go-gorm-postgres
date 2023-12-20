@@ -15,8 +15,8 @@ type Config struct {
 func LoadConfig(path string) (config Config, err error) {
     // Set the configuration path
     viper.AddConfigPath(path)
-    viper.SetConfigType("env")
     viper.SetConfigName("app")
+    viper.SetConfigType("env")
 
     // Automatically bind environment variables with the Config struct
     viper.AutomaticEnv()
@@ -24,7 +24,7 @@ func LoadConfig(path string) (config Config, err error) {
     // Read the configuration file
     err = viper.ReadInConfig()
     if err != nil {
-        return
+        panic(err)
     }
 
     // Unmarshal the configuration data into the Config struct

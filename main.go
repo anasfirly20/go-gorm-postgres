@@ -29,5 +29,4 @@ func main() {
 	router.GET("/healthchecker", controller.GETUser)
 
 	log.Fatal(server.Run(":" + config.ServerPort))
-	
 }
