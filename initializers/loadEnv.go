@@ -13,17 +13,21 @@ type Config struct {
 }
 
 func LoadConfig(path string) (config Config, err error) {
-	viper.AddConfigPath(path)
-	viper.SetConfigType("env")
-	viper.SetConfigName("app")
+    // Set the configuration path
+    viper.AddConfigPath(path)
+    viper.SetConfigType("env")
+    viper.SetConfigName("app")
 
-	viper.AutomaticEnv()
+    // Automatically bind environment variables with the Config struct
+    viper.AutomaticEnv()
 
-	err = viper.ReadInConfig()
-	if err != nil {
-		return
-	}
+    // Read the configuration file
+    err = viper.ReadInConfig()
+    if err != nil {
+        return
+    }
 
-	err = viper.Unmarshal(&config)
-	return
+    // Unmarshal the configuration data into the Config struct
+    err = viper.Unmarshal(&config)
+    return
 }
