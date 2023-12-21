@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/anasfirly20/go-codevo/controller"
+	"github.com/anasfirly20/go-codevo/controllers"
 	"github.com/anasfirly20/go-codevo/initializers"
 	"github.com/gin-gonic/gin"
 )
@@ -26,7 +26,7 @@ func main() {
 	}
 	
 	router := server.Group("/api")
-	router.GET("/healthchecker", controller.GETUser)
+	router.GET("/healthchecker", controllers.GETUser)
 
 	log.Fatal(server.Run(":" + config.ServerPort))
 }
