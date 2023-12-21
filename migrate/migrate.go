@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/anasfirly20/go-codevo/initializers"
-	"github.com/anasfirly20/go-codevo/models"
+	"github.com/anasfirly20/go-gorm-postgres/initializers"
+	"github.com/anasfirly20/go-gorm-postgres/models"
 )
 
 func init() {

@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/anasfirly20/go-codevo/models"
-	"github.com/anasfirly20/go-codevo/utils"
+	"github.com/anasfirly20/go-gorm-postgres/models"
+	"github.com/anasfirly20/go-gorm-postgres/utils"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
@@ -19,7 +19,7 @@ func NewAuthController(DB *gorm.DB) AuthController {
 	return AuthController{DB}
 }
 
-func (ac *AuthController) SingUpUser(ctx *gin.Context) {
+func (ac *AuthController) SignUpUser(ctx *gin.Context) {
 	var payload *models.SignUpInput
 
 	if err := ctx.ShouldBindJSON(&payload); err != nil {

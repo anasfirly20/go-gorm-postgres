@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/anasfirly20/go-codevo/controllers"
-	"github.com/anasfirly20/go-codevo/initializers"
+	"github.com/anasfirly20/go-gorm-postgres/controllers"
+	"github.com/anasfirly20/go-gorm-postgres/initializers"
 	"github.com/gin-gonic/gin"
 )
 
