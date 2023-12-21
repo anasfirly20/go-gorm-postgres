@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 
-	"github.com/anasfirly20/go-gorm-postgres/controllers"
 	"github.com/anasfirly20/go-gorm-postgres/initializers"
 	"github.com/gin-gonic/gin"
 )
@@ -25,8 +24,8 @@ func main() {
 		log.Fatal("Could not load environment variables", err)
 	}
 	
-	router := server.Group("/api")
-	router.GET("/healthchecker", controllers.GETUser)
+	// router := server.Group("/api")
+	// router.GET("/healthchecker", controllers.GETUser)
 
 	log.Fatal(server.Run(":" + config.ServerPort))
 }
